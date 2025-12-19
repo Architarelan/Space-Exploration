@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Discovery</title>
+    <img src="../assets/images/astronaut.png" alt="Hot Jupiter" class="astronaut-img">
+    <style>
+        body {
+            background: url('../assets/images/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+           
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            margin: 0;
+            flex-grow: 1;
+        }
+        .nav {
+            margin-right: 20px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        .content {
+            margin-top: 0px;
+
+        
+            padding: 100px 50px 50px;
+        }
+        .section {
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+        .section h2 {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+        .info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            text-align: left;
+           
+        }
+        .planet-img {
+            width: 250px;
+            max-width: 80%;
+            border-radius: 10px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            float: right;
+            margin: 10px;    
+        }
+    
+        .astronaut-img{
+            width: 40%;
+            max-width: 100px;
+            border-radius: 10px;
+            margin-left: 0;
+            display: block;
+            
+        }
+       
+        li{
+            text-align: justify;
+        }
+        .home-link {
+            margin-top: 10px;
+        }
+        .home-link a {
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>SPACE DISCOVERIES</h1>
+        <div class="nav">
+            <a href="#planets">EXOPLANETS</a>
+            <a href="#blackholes">BLACKHOLES</a>
+            <a href="#galaxies">GALAXIES</a>
+            <a href="#darkmatter">DARK MATTER</a>
+            <a href="#aliens">ALIENS</a>
+            <a href="#mars">MARS</a>
+            <a href="#wormholes">WORMHOLES</a>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="section" id="planets">
+            
+
+            <h2>Exoplanets</h2>
+            <div class="info">
+                <section id="exoplanets" style="text-align: center; padding: 50px; background: #001a33; color: #fff; border: 2px solid #004466; border-radius: 10px; margin: 20px;">
+                    <h2 style="font-size: 2.5em;">🪐 Exoplanets: Worlds Beyond Our Solar System</h2>
+                
+                    <div style="display: inline-block, content=width=device-width, initial-scale=1.0">
+                        <h3>Images of Exoplanets</h3>
+                        <img src="../assets/images/blackhole1.jpg" alt="Blackhole 1" width="200" height="200">
+                        <img src="../assets/images/blackhole2.jpg" alt="Blackhole 2" width="200" height="200">
+                        </div>
+                    
+                    <p style="font-size: 1.2em; max-width: 800px; margin: auto;">
+                        Exoplanets are planets that orbit stars outside our solar system. Scientists have discovered thousands, and some might even be habitable! 🌍✨
+                    </p>
+                
+                    <h3>🛸 Types of Exoplanets</h3>
+                    <ul style="list-style: none; font-size: 1.2em;">
+                        <li>🔹 <strong>Hot Jupiters</strong> – Giant gas planets that orbit very close to their stars.</li>
+                        <li>🔹 <strong>Super-Earths</strong> – Rocky planets larger than Earth but smaller than Neptune.</li>
+                        <li>🔹 <strong>Mini-Neptunes</strong> – Planets smaller than Neptune with thick atmospheres.</li>
+                        <li>🔹 <strong>Rogue Planets</strong> – Free-floating planets not bound to any star.</li>
+                    </ul>
+                
+                    <h3>🚀 Mind-Blowing Facts About Exoplanets</h3>
+                    <p style="max-width: 800px; margin: auto;">
+                        🌠 The first exoplanet was discovered in **1992**, and now we know of **5,000+ exoplanets**! <br>
+                        🌊 Scientists found an exoplanet, **TOI-1452b**, that might be completely covered in water! <br>
+                        🔥 Some exoplanets, like **KELT-9b**, are hotter than some stars! <br>
+                        🌍 The best candidate for life is **Kepler-452b**, often called "Earth’s Cousin."  
+                    </p>
+                
+                    <h3>🎥 Watch This Video About Exoplanets</h3>
+                   <!-- Embedded Video -->
+    <video width="600" height="450" controls>
+        <source src="Exoplanets 101 _ National Geographic.mp4" type="video/mp4">
+    </video>
+                
+                </section>
+                
+        </div>
+        
+        <div class="section" id="blackholes">
+            <h2>Black Holes</h2>
+            <div class="info">
+                <section id="blackholes" style="background: url('../assets/images/background.jpg') no-repeat center center/cover; color: #fff; text-align: center; padding: 50px;">
+                    <h2 style="font-size: 2.5em;">🕳️ Black Holes: The Cosmic Abyss</h2>
+                
+                    <div style="display: inline-block, content=width=device-width, initial-scale=1.0">
+                        <h3>Images of Blackholes</h3>
+                        <img src="../assets/images/blackhole1.jpg" alt="Blackhole 1" width="200" height="200">
+                        <img src="../assets/images/blackhole2.jpg" alt="Blackhole 2" width="200" height="200">
+                        <img src="../assets/images/blackhole3.jpg" alt="Blackhole 3" width="200" height="200">
+                        </div>
+
+                    <p style="font-size: 1.2em; max-width: 800px; margin: auto;">
+                        Black holes are regions in space where gravity is so intense that nothing—not even light—can escape. They are some of the most mysterious and powerful objects in the universe! 🌌
+                    </p>
+                
+                    <h3>⚫ Types of Black Holes</h3>
+                    <ul style="list-style: none; font-size: 1.2em;">
+                        <li>🔹 <strong>Stellar Black Holes</strong> – Formed when massive stars collapse.</li>
+                        <li>🔹 <strong>Supermassive Black Holes</strong> – Millions to billions of times the Sun’s mass, found at galaxy centers.</li>
+                        <li>🔹 <strong>Intermediate Black Holes</strong> – A rare, in-between type that might help explain how supermassive black holes form.</li>
+                        <li>🔹 <strong>Primordial Black Holes</strong> – Hypothetical black holes formed right after the Big Bang.</li>
+                    </ul>
+                
+                    <h3>🛸 Mind-Blowing Facts About Black Holes</h3>
+                    <p style="max-width: 800px; margin: auto;">
+                        🌠 The closest known black hole to Earth is about <strong>1,500 light-years</strong> away. <br>
+                        🌀 The largest black hole discovered is over <strong>40 billion times</strong> the mass of the Sun! <br>
+                        🏃 Time slows down near a black hole due to extreme gravity—if you fell in, you'd appear frozen in time! <br>
+                        🔭 The first-ever image of a black hole was captured in <strong>2019</strong> by the Event Horizon Telescope!  
+                    </p>
+                
+                    <h3>🎥 Watch This Video About Black Holes</h3>
+                    <!-- Embedded Video -->
+         <video width="600" height="450" controls>
+    <source src="Black Holes 101 _ National Geographic.mp4" type="video/mp4">
+        </video>
+                
+                </section>
+                
+        </div>
+        </div>
+        
+
+
+
+
+        <div class="section" id="galaxies">
+            <h2>Galaxies</h2>
+            <div class="info">
+                <section id="galaxy" style="background: url('background.jpg') no-repeat center center/cover; color: #fff; text-align: center; padding: 50px;">
+                    <h2 style="font-size: 2.5em;">🌌 Galaxies in Space: Mysteries of the Universe</h2>
+                    
+                    <div style="display: inline-block, content=width=device-width, initial-scale=1.0">
+                    <h3>Images of Galaxies</h3>
+                    <img src="galaxy1.jpg" alt="Galaxy 1" width="200" height="200">
+                    <img src="galaxy2.jpg" alt="Galaxy 2" width="200" height="200">
+                    <img src="galaxy3.jpg" alt="Galaxy 3" width="200" height="200">
+                    <img src="galaxy4.jpg" alt="Galaxy 4" width="200" height="200">
+                    <img src="Irregular_Galaxy.jpg" alt="Galaxy 1" width="200" height="200">
+                    <img src="milky way .jpg" alt="Galaxy 2" width="200" height="200">
+                    </div>
+
+                    <p style="font-size: 1.2em; max-width: 800px; margin: auto;">
+                        Galaxies are vast cosmic systems made up of stars, planets, gas, dust, and dark matter, all bound together by gravity. Our Milky Way is just one of the <strong>trillions of galaxies</strong> in the universe!
+                    </p>
+                
+                    <h3>🔭<u>TYPES OF GALAXIES </u></h3>
+                    <ul style="list-style: none; font-size: 1.2em;">
+                        <li>🔹 <strong>Spiral Galaxies</strong> – Like the Milky Way, they have spiral arms full of stars, gas, and dust.</li>
+                        <li>🔹 <strong>Elliptical Galaxies</strong> – Shaped like smooth ovals and mostly contain old stars.</li>
+                        <li>🔹 <strong>Irregular Galaxies</strong> – No specific shape; often formed by galactic collisions.</li>
+                        <li>🔹 <strong>Lenticular Galaxies</strong> – A mix between spiral and elliptical galaxies.</li>
+                    </ul>
+                
+                    <h3>🚀 Mind-Blowing Facts About Galaxies</h3>
+                    <p style="max-width: 800px; margin: auto;">
+                        ✨ The <strong>Milky Way</strong> is over <strong>100,000 light-years</strong> across and contains <strong>200 billion stars</strong>! <br>
+                        ✨ The closest galaxy, <strong>Andromeda</strong>, is on a collision course with the Milky Way in 4.5 billion years! <br>
+                        ✨ Supermassive <strong>black holes</strong> exist at the center of most galaxies. <br>
+                        ✨ Scientists estimate there are <strong>2 trillion galaxies</strong> in the observable universe!  
+                    </p>
+                
+                    <h3>🎥 Watch More About Galaxies</h3>
+    <!-- Embedded Video -->
+    <video width="600" height="450" controls>
+        <source src="galaxy.mp4" type="video/mp4">
+    </video>
+                </section>
+        </div>
+
+
+
+        <div class="section" id="darkmatter">
+            <h2>Dark matter</h2>
+        <div class="info" >
+        <section id="dark-matter" style="background: url('background.jpg') no-repeat center center/cover; color: #fff; text-align: center; padding: 50px;">
+            <h2 style="font-size: 2.5em; margin-bottom: 20px;">🌌 Dark Matter: The Invisible Mystery of the Universe</h2>
+            <p style="max-width: 800px; margin: 0 auto 30px;">
+                Scientists believe that most of the universe is made up of <strong>dark matter</strong>, an invisible and mysterious substance that doesn’t emit, absorb, or reflect light—but its gravitational effects shape galaxies and cosmic structures.
+            </p>
+        
+            <h3>🕵️ What is Dark Matter?</h3>
+            <p>Dark matter makes up about <strong>27% of the universe</strong>, while <strong>ordinary matter (stars, planets, and us!) accounts for only 5%</strong>. The rest is <strong>dark energy</strong>, which drives the universe's expansion.</p>
+        
+            <h3>🔬 Evidence of Dark Matter</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li>🔹 <strong>Galaxy Rotation Curves</strong> – Galaxies spin faster than expected, suggesting an invisible mass is holding them together.</li>
+                <li>🔹 <strong>Gravitational Lensing</strong> – Light from distant galaxies bends around unseen matter, proving its presence.</li>
+                <li>🔹 <strong>Cosmic Microwave Background (CMB)</strong> – Subtle fluctuations in the universe’s oldest light reveal the influence of dark matter.</li>
+                <li>🔹 <strong>The Bullet Cluster</strong> – A famous collision of galaxy clusters where dark matter separated from visible matter.</li>
+            </ul>
+        
+            <h3>💡 Dark Matter vs. Dark Energy</h3>
+            <p>🚀 <strong>Dark Matter</strong> – Provides gravity and binds galaxies together.</p>
+            <p>⚡ <strong>Dark Energy</strong> – Pushes the universe apart, accelerating expansion.</p>
+        
+            <h3>❓ What Could Dark Matter Be?</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li>🖤 <strong>WIMPs (Weakly Interacting Massive Particles)</strong> – Hypothetical particles that barely interact with normal matter.</li>
+                <li>⚫ <strong>Axions</strong> – Tiny particles theorized to explain certain quantum mysteries.</li>
+                <li>🌀 <strong>Primordial Black Holes</strong> – Some believe that small black holes from the early universe could be part of dark matter.</li>
+            </ul>
+        
+            <h3>🔭 How Are Scientists Searching for Dark Matter?</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li>🔹 <strong>Large Hadron Collider (LHC)</strong> – Smashing particles together to detect dark matter interactions.</li>
+                <li>🔹 <strong>Underground Detectors</strong> – Searching for weak dark matter interactions deep underground.</li>
+                <li>🔹 <strong>Space Telescopes (like James Webb & Hubble)</strong> – Observing gravitational lensing effects of unseen mass.</li>
+            </ul>
+        
+            <p style="margin-top: 30px; font-size: 1.2em;">🌠 <strong>Dark Matter remains one of the biggest mysteries in astrophysics.</strong> Scientists are racing to unlock its secrets, and its discovery could <strong>rewrite our understanding of the universe!</strong></p>
+        
+            h3>🎥 Watch More About Darkmatter</h3>
+    <!-- Embedded Video -->
+    <video width="600" height="450" controls>
+        <source src="darkmatter.mp4.mp4" type="video/mp4">
+    </video>
+
+        </section>
+        </div>
+
+        <div class="section" id="aliens">
+            <h2>Aliens</h2>
+            <div class="info">
+        
+        <section id="aliens-section" style="background: url('background.jpg') no-repeat center center/cover; color: #ffffff; text-align: center;">
+            <h2 style="font-size: 2.5em;">👽 Aliens & Extraterrestrial Life 🚀</h2>
+            Are We Alone in the Universe? <br> For centuries, humans have wondered whether extraterrestrial life exists beyond Earth. <br> 
+            Scientists, astronomers, and space agencies continue to explore planets, moons, and galaxies in search of answers.
+            
+            <h3 style="font-size: 2em;">🛸 Possible Signs of Alien Life</h3>
+            🔹 <strong>Exoplanets & Habitability</strong> – Thousands of exoplanets (planets outside our solar system) have been discovered, some in the "habitable zone," where liquid water might exist. <br>
+            🔹 <strong>Mysterious Radio Signals</strong> – Scientists have detected unexplained signals from deep space, including Fast Radio Bursts (FRBs) and repeating signals. <br>
+            🔹 <strong>Martian Microbes?</strong> – Mars rovers are searching for evidence of ancient microbial life on the Red Planet. <br>
+            🔹 <strong>Oumuamua – The Interstellar Visitor</strong> – A mysterious object from outside our solar system passed by in 2017, sparking debates about its origins.
+            
+            <h3 style="font-size: 2em;">👾 Famous Alien Theories & Sightings</h3>
+            📡 <strong>The Fermi Paradox</strong> – If aliens exist, why haven’t we made contact yet? <br>
+            🛸 <strong>Roswell Incident (1947)</strong> – The most famous UFO crash site in history. <br>
+            🌌 <strong>Drake Equation</strong> – A scientific formula estimating the probability of alien civilizations. <br>
+            👀 <strong>Area 51 & UFO Conspiracies</strong> – The US government's secret research base is often linked to extraterrestrial encounters.
+            
+            <h3 style="font-size: 2em;">🚀 SETI & NASA’s Search for Life</h3>
+            The Search for Extraterrestrial Intelligence (SETI) scans the skies for alien signals, while NASA’s missions, like the James Webb Space Telescope, explore distant planets for habitable conditions.
+        </section>
+        
+    </div>
+
+
+    <div class="section" id="mars">
+        <h2>MARS</h2>
+        <div class="info">
+    
+            <section id="aliens-section" style="background: url('background.jpg') no-repeat center center/cover; color: #ffffff; text-align: center;">
+                <h2 style="font-size: 2.5em;">🚀 Mars: The Red Planet</h2>
+            
+                <!-- Mars Image -->
+                <img src="mars1.jpg" alt="Mars Image" style="width: 80%; max-width: 800px; border-radius: 10px; margin: 20px 0;">
+            
+                <p style="font-size: 1.2em; max-width: 800px; margin: auto;">
+                    Mars, often called the <strong>"Red Planet"</strong>, is the fourth planet from the Sun and a top candidate for future human exploration! 🏜️🚀
+                </p>
+            
+                <h3>🛰️ Key Features of Mars</h3>
+                <ul style="list-style: none; font-size: 1.2em;">
+                    <li>🔹 <strong>Thin Atmosphere</strong> – Mostly carbon dioxide, making it hard for humans to breathe.</li>
+                    <li>🔹 <strong>Olympus Mons</strong> – The tallest volcano in the solar system, 3 times higher than Mount Everest! ⛰️</li>
+                    <li>🔹 <strong>Valles Marineris</strong> – A massive canyon system stretching 4,000 km, deeper than the Grand Canyon! 🏜️</li>
+                    <li>🔹 <strong>Ice at the Poles</strong> – Frozen water exists, increasing the chances of finding past life! ❄️</li>
+                </ul>
+            
+                <h3>🚀 Mind-Blowing Facts About Mars</h3>
+                <p style="max-width: 800px; margin: auto;">
+                    🔴 A day on Mars lasts **24.6 hours**, but a year is **687 Earth days** long! <br>
+                    🌌 Mars has **two small moons**, Phobos & Deimos, which might be captured asteroids. <br>
+                    🏠 Scientists are working on **colonizing Mars**, with plans for the first humans to land by the 2030s! <br>
+                    🤖 NASA’s **Perseverance rover** is currently exploring Mars and searching for signs of ancient life!  
+                </p>
+            
+                <h3>🎥 Watch This Video About Mars</h3>
+                <!-- Embedded Video -->
+                <video width="600" height="450" controls>
+                    <source src="" type="video/mp4">
+                </video>
+            </section>
+</div>
+
+
+
+<div class="section" id="wormholes">
+    <h2>WORMHOLES</h2>
+    <div class="info">
+    
+        <section id="wormholes" style="text-align: center; padding: 50px; background: #10002b; color: #fff; border: 2px solid #6200ea; border-radius: 10px; margin: 20px;">
+            <h2 style="font-size: 2.5em;">🌀 Wormholes: Shortcuts Through Space-Time</h2>
+        
+            <div style="display: inline-block, content=width=device-width, initial-scale=1.0">
+                <h3>Images of Wormholes</h3>
+                <img src="wormhole.jpg" alt="Blackhole 1" width="200" height="200">
+                <img src="wormhole2.jpg" alt="Blackhole 2" width="200" height="200">
+                </div>
+        
+            <p style="font-size: 1.2em; max-width: 800px; margin: auto;">
+                Wormholes, also known as <strong>"Einstein-Rosen bridges"</strong>, are theoretical tunnels that connect distant points in space and time. Could they be the key to **faster-than-light travel**? 🚀✨
+            </p>
+        
+            <h3>🔭 The Science Behind Wormholes</h3>
+            <ul style="list-style: none; font-size: 1.2em;">
+                <li>🔹 <strong>Predicted by Einstein</strong> – Wormholes come from the **theory of general relativity**.</li>
+                <li>🔹 <strong>Two Ends, One Tunnel</strong> – They could link **different parts of the universe** or even **parallel universes**! 🌌</li>
+                <li>🔹 <strong>Stabilized by Exotic Matter</strong> – To remain open, a wormhole might need mysterious negative-energy particles. 🛸</li>
+                <li>🔹 <strong>Theoretical Only</strong> – No wormhole has ever been found, but scientists continue to search! 🔬</li>
+            </ul>
+        
+            <h3>🚀 Mind-Blowing Facts About Wormholes</h3>
+            <p style="max-width: 800px; margin: auto;">
+                🌠 If wormholes exist, they could allow for **instantaneous space travel** across galaxies! <br>
+                ⏳ Some theories suggest **wormholes could connect different time periods**, making **time travel** possible. <br>
+                🔮 In movies like <strong>Interstellar</strong>, wormholes are used to explore distant planets beyond our reach. 🎥 <br>
+                🌌 Some scientists believe **black holes** might actually be wormholes leading to other universes!  
+            </p>
+        
+            <h3>🎥 Watch This Video About Wormholes</h3>
+            <!-- Embedded Video -->
+            <video width="600" height="450" controls>
+                <source src="What If a Wormhole Formed in Our Solar System_.mp4" type="video/mp4">
+            </video>
+        
+        </section>
+        
+
+
+
+
+    
+    <div class="home-link">
+        <a href="index.html">Back to Home Page</a>
+    </div>
+</body>
+</html>

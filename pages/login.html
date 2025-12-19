@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Login Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <img src="astronaut.png" alt="Earth" class="center-image">
+        <h2>Login</h2>
+        <form onsubmit="loginUser(); return false;">
+            <div class="input-container">
+                <input type="text" id="username" placeholder="Username" required>
+
+            </div>
+            <div class="input-container">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+
+    <script>
+        function loginUser() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+    
+            fetch('http://localhost:8083/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            })
+            .then(response => {
+                if (!response.ok) throw new Error("Login failed");
+                return response.json();
+            })
+            .then(user => {
+                sessionStorage.setItem('userData', JSON.stringify(user));
+    
+                // Redirect to index.html after successful login
+                window.location.href = "index.html";
+            })
+            .catch(error => {
+                alert("Login failed: " + error.message);
+            });
+        }
+    </script>
+    <div id="user-details"></div>
+
+    <script>
+        window.onload = function () {
+            const user = JSON.parse(sessionStorage.getItem('userData'));
+            if (user) {
+                document.getElementById("user-details").innerHTML = `
+                    <h2>Welcome, ${user.username}!</h2>
+                    <p>Email: ${user.email}</p>
+                    <p>Address: ${user.address ?? 'Not Provided'}</p>
+                    <p>Phone: ${user.phone ?? 'Not Provided'}</p>
+                `;
+            } else {
+                document.getElementById("user-details").innerText = "No user data found.";
+            }
+        };
+    </script>
+    
+    
+</body>
+</html>

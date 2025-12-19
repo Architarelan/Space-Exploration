@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shop - Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+        .form-section {
+            text-align: left;
+            margin: 20px 0;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background: #ff9800;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            margin: 10px 0;
+        }
+        button:hover {
+            background: #ffa726;
+        }
+        .home-link {
+            margin-top: 30px;
+        }
+        .home-link a {
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💳 Secure Payment</h1>
+
+        <div class="form-section" id="user-info">
+            <h2>👤 Your Details</h2>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Your Full Name" readonly>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="you@example.com" readonly>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" placeholder="Your Shipping Address" readonly>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" placeholder="1234567890" readonly>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>💳 Card Payment</h2>
+            <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+            </div>
+            <div class="form-group">
+                <label for="expiry-date">Expiry Date</label>
+                <input type="text" id="expiry-date" placeholder="MM/YY">
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" placeholder="123">
+            </div>
+            <button onclick="processPayment()">Complete Payment</button>
+        </div>
+
+        <div class="home-link">
+            <a href="index.html">⬅ Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        // Simulated user data fetch from backend
+        const loggedInUser = {
+            username: "archita_relan",
+            email: "vijayrelan0115@gmail.com",
+            address: "sfafstwe",
+            phone: "7499507838"
+        };
+
+        window.onload = function () {
+            document.getElementById('name').value = loggedInUser.username;
+            document.getElementById('email').value = loggedInUser.email;
+            document.getElementById('address').value = loggedInUser.address;
+            document.getElementById('phone').value = loggedInUser.phone;
+        };
+
+        function isValidCardNumber(cardNumber) {
+            const sanitized = cardNumber.replace(/\D/g, '');
+            if (!/^\d{13,19}$/.test(sanitized)) return false;
+            let sum = 0, shouldDouble = false;
+            for (let i = sanitized.length - 1; i >= 0; i--) {
+                let digit = parseInt(sanitized.charAt(i));
+                if (shouldDouble) {
+                    digit *= 2;
+                    if (digit > 9) digit -= 9;
+                }
+                sum += digit;
+                shouldDouble = !shouldDouble;
+            }
+            return sum % 10 === 0;
+        }
+
+        function isValidExpiryDate(expiryDate) {
+            if (!/^\d{2}\/\d{2}$/.test(expiryDate)) return false;
+            const [month, year] = expiryDate.split('/').map(Number);
+            if (month < 1 || month > 12) return false;
+            const currentDate = new Date();
+            const currentYear = currentDate.getFullYear() % 100;
+            const currentMonth = currentDate.getMonth() + 1;
+            return year > currentYear || (year === currentYear && month >= currentMonth);
+        }
+
+        function isValidCVV(cvv) {
+            return /^\d{3,4}$/.test(cvv);
+        }
+
+        function processPayment() {
+            const cardNumber = document.getElementById('card-number').value.trim();
+            const expiryDate = document.getElementById('expiry-date').value.trim();
+            const cvv = document.getElementById('cvv').value.trim();
+
+            if (!isValidCardNumber(cardNumber)) {
+                alert('❌ Invalid card number.');
+                return;
+            }
+            if (!isValidExpiryDate(expiryDate)) {
+                alert('❌ Invalid expiry date.');
+                return;
+            }
+            if (!isValidCVV(cvv)) {
+                alert('❌ Invalid CVV.');
+                return;
+            }
+
+            alert('✅ Payment Successful! Your order is confirmed.');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

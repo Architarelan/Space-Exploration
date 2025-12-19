@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Sign Up Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <img src="astronaut.png" alt="Earth" class="center-image">
+        <h2>Sign Up</h2>
+        <form onsubmit="saveUserDetails(); return false;">
+            <div class="input-container">
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <div class="input-container">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <div class="input-container">
+                <input type="text" id="address" placeholder="Enter your address" required>
+            </div>
+            <div class="input-container">
+                <input type="text" id="phone" placeholder="Enter your phone" required>
+            </div>
+            <div class="input-container">
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="Index.html">Login</a></p>
+        
+        <!-- Error Message Section -->
+        <p id="error-message" style="color: red; display: none;"></p>
+    </div>
+<script>
+    function saveUserDetails() {
+        let username = document.getElementById("username").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let address = document.getElementById("address").value;
+        let phone = document.getElementById("phone").value;
+    
+        console.log("🔹 Sending Data:", { username, email, password, address, phone });
+    
+        fetch('http://localhost:3000/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, email, password, address, phone })
+        })
+        .then(response => {
+            console.log("🔹 Server Response:", response);
+            return response.text();
+        })
+        .then(data => {
+            console.log("🔹 Response Data:", data);
+            if (data.includes("User registered successfully")) {
+                alert("✅ Registration Successful!");
+                window.location.href = "index.html";
+            } else {
+                document.getElementById('error-message').textContent = data;
+                document.getElementById('error-message').style.display = 'block';
+            }
+        })
+        .catch(error => {
+            console.error('❌ Fetch Error:', error);
+        });
+    }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shop - Cart & Checkout</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+        .cart-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+        .cart-items li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #444;
+        }
+        .cart-items span {
+            display: flex;
+            align-items: center;
+        }
+        .material-icons {
+            margin-right: 10px;
+        }
+        button {
+            background: #c3c1be;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #ffa726;
+        }
+        .checkout button {
+            background: #4CAF50;
+            color: white;
+            width: 100%;
+        }
+        .form-group {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Space Store - Cart & Checkout</h1>
+
+        <div class="cart"> 
+            <h2>🛒 Your Cart</h2>
+            <ul class="cart-items" id="cart-items"></ul>
+            <h3>Total: Rs.<span id="total">0</span></h3>
+
+            <input type="text" placeholder="Enter Coupon Code" id="coupon"> 
+            <button onclick="applyCoupon()">Apply Coupon</button>
+
+            <h2 style="margin-top: 30px;">💼 Your Details</h2>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="John Doe">
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" placeholder="123 Galaxy St, Mars">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="spaceuser@example.com">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" placeholder="9876543210">
+            </div>
+
+            <h2>💳 Payment Method</h2>
+            <div class="form-group">
+                <label><input type="radio" name="payment" value="credit" checked> Credit Card</label><br>
+                <label><input type="radio" name="payment" value="debit"> Debit Card</label><br>
+                <label><input type="radio" name="payment" value="upi"> UPI</label><br>
+            </div>
+
+            <button onclick="proceedToPayment()">Proceed to Payment</button>
+        </div>
+    </div>
+
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartItems = document.getElementById("cart-items");
+            let totalAmount = document.getElementById("total");
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = "<p>Your cart is empty.</p>";
+                totalAmount.innerText = "0";
+                return;
+            }
+
+            let total = 0;
+            cartItems.innerHTML = "";
+            cart.forEach((product, index) => {
+                cartItems.innerHTML += `
+                    <li>
+                        <span><i class="material-icons">star</i> ${product.item} - Rs.${product.price}</span>
+                        <button onclick="removeItem(${index})"><i class="material-icons">delete</i></button>
+                    </li>`;
+                total += product.price;
+            });
+
+            totalAmount.innerText = total;
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+
+        function applyCoupon() {
+            let couponInput = document.getElementById("coupon").value.trim();
+            let totalElement = document.getElementById("total");
+            let total = parseFloat(totalElement.innerText);
+
+            if (couponInput === "SPACE10" && total > 0) { 
+                total *= 0.9;
+                totalElement.innerText = total.toFixed(2);
+                alert("Coupon Applied! 10% Discount");
+            } else {
+                alert("Invalid or Already Applied Coupon");
+            }
+        }
+
+        function proceedToPayment() {
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            if (!name || !address || !email || !phone) {
+                alert("Please fill in all user details before proceeding.");
+                return;
+            }
+
+            // Save user details to sessionStorage
+            const userDetails = { name, address, email, phone };
+            sessionStorage.setItem("userDetails", JSON.stringify(userDetails));
+
+            window.location.href = 'payment.html';
+        }
+
+        window.onload = function () {
+            loadCart();
+        };
+    </script>
+</body>
+</html>

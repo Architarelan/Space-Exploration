@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Home</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, <span id="username"></span>!</h1>
+        <p><strong>Email:</strong> <span id="email"></span></p>
+        <p><strong>Address:</strong> <span id="address"></span></p>
+        <p><strong>Phone:</strong> <span id="phone"></span></p>
+    </div>
+
+    <script>
+        const user = JSON.parse(sessionStorage.getItem('userData'));
+        if (!user) {
+            window.location.href = "login.html";
+        } else {
+            document.getElementById("username").textContent = user.username;
+            document.getElementById("email").textContent = user.email || "Not Provided";
+            document.getElementById("address").textContent = user.address || "Not Provided";
+            document.getElementById("phone").textContent = user.phone || "Not Provided";
+        }
+    </script>
+</body>
+</html>

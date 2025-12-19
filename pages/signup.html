@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/signup.css">
+    <title>Sign Up</title>
+    <script>
+        async function handleSubmit(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById("name").value.trim();
+            let username = document.getElementById("username").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let password = document.getElementById("password").value.trim();
+
+            // ✅ Send all required fields
+            let userData = { name, username, email, phone, password };
+
+            try {
+                let response = await fetch("http://localhost:4000/register", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(userData)
+                });
+
+                let result = await response.json();
+
+                if (response.ok) {
+                    alert("Sign-up successful! Redirecting to login...");
+                    window.location.href = "index.html"; // Redirect to login page
+                } else {
+                    alert("Error: " + result.message);
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Something went wrong. Try again later.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box-container">
+        <div class="signup-container">
+            <img src="../assets/images/astronaut.png" alt="Earth" class="center-image">
+            <h2>Sign Up</h2>
+            <form onsubmit="handleSubmit(event)">
+                <div class="input-group">
+                    <input type="text" id="name" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+               
+                <button type="submit" class="btn">Sign Up</button>
+            </form>
+            <div class="already-registered">
+                Already registered? <a href="../Index.html">Go to Login</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

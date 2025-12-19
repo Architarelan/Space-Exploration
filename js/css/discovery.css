@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: url('background.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+header {
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    border-bottom: 2px solid white;
+    width: 100%;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 50px 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.discovery-card {
+    background: rgba(255, 255, 255, 0.15);
+    width: 280px;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.discovery-card:hover {
+    transform: scale(1.05);
+}
+
+.discovery-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.discovery-card h2 {
+    margin: 15px 0;
+    font-size: 20px;
+}
+
+.discovery-card p {
+    font-size: 14px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #ff9800;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #e68900;
+}
+
+/* Animated Starry Background */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('https://cdn.pixabay.com/photo/2013/07/12/19/21/stars-154528_1280.png') repeat;
+    animation: starAnimation 50s linear infinite;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+@keyframes starAnimation {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 30px 5px;
+    }
+
+    .discovery-card {
+        width: 90%;
+    }
+}

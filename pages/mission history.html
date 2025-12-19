@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission History</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('../assets/images/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .container {
+            padding: 50px;
+            max-width: 800px;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        .mission {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mission h2 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+        }
+
+        .mission p {
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .images {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .images img {
+            position: absolute;
+            width: 80px;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        /* Spread images around the page */
+        .images img:nth-child(1) { top: 5%; left: 5%; }
+        .images img:nth-child(2) { top: 10%; right: 5%; }
+        .images img:nth-child(3) { top: 50%; left: 10%; }
+        .images img:nth-child(4) { top: 30%; right: 15%; }
+        .images img:nth-child(5) { bottom: 40%; left: 20%; }
+        .images img:nth-child(6) { top: 15%; left: 60%; }
+        .images img:nth-child(7) { bottom: 10%; right: 15%; }
+        .images img:nth-child(8) { bottom: 20%; left: 5%; }
+        .images img:nth-child(9) { bottom: 5%; right: 5%; }
+        .images img:nth-child(10) { bottom: 15%; left: 50%; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .read-more-btn, .back-btn, .vid-btn {
+            display: inline-block;
+            margin: 15px 5px 0;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .read-more-btn:hover, .back-btn:hover, .vid-btn:hover {
+            background: #7b2eff;
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating images -->
+    <div class="images">
+        <img src="../assets/images/astronaut.png" alt="Astronaut">
+        <img src="../assets/images/helmet.png" alt="Helmet">
+        <img src="../assets/images/hero.png" alt="Rocket Astronaut">
+        <img src="../assets/images/astronaut.png" alt="Astronaut">
+        <img src="../assets/images/light-moon.png" alt="light-moon">
+        <img src="../assets/images/helmet.png" alt="Helmet">
+        <img src="../assets/images/hero.png" alt="Rocket Astronaut">
+        <img src="../assets/images/astronaut.png" alt="Astronaut">
+        <img src="../assets/images/light-moon.png" alt="light-moon">
+        <img src="../assets/images/moon.png" alt="moon">
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Mission History</h1>
+        <p>
+            Since the dawn of human curiosity, the stars have been our ultimate destination. From the first telescope
+            to interstellar exploration, our missions have expanded our understanding of the universe. 
+            <br><br>
+            Our first manned mission in the early 21st century marked a revolutionary step in space exploration. 
+            With advanced technologies and international collaboration, we launched multiple deep-space probes, 
+            lunar stations, and Mars habitats.
+            <br><br>
+            These milestones were more than just technological achievements; they represented humanity's boldest 
+            dreams taking shape across the cosmos.
+        </p>
+        <h1>Detailed Mission Timeline</h1>
+        <p>Here's a closer look at the most notable missions:</p>
+
+        <ul>
+            <li><strong>2028:</strong> Permanent lunar base established.</li>
+            <li><strong>2032:</strong> First human presence on Mars.</li>
+            <li><strong>2035:</strong> Deep Space Gateway construction.</li>
+            <li><strong>2040:</strong> AI-driven probes beyond asteroid belt.</li>
+            <li><strong>2045:</strong> Mars self-sustaining colonies.</li>
+        </ul>
+
+        <h1>Historic Space Missions</h1>
+
+        <div class="mission">
+            <h2>Apollo 11 (1969)</h2>
+            <p>The first mission to land humans on the Moon, where Neil Armstrong took the famous "giant leap for mankind."</p>
+            <a class="vid-btn" href="../pages/video.html">watch a video</a>
+        </div>
+
+        <div class="mission">
+            <h2>Voyager 1 (1977)</h2>
+            <p>Voyager 1 is now in interstellar space, sending data from beyond the solar system.</p>
+            <a class="vid-btn" href="../pages/video.html">watch a video</a>
+        </div>
+
+        <div class="mission">
+            <h2>Hubble Space Telescope (1990)</h2>
+            <p>One of the most important space observatories, delivering stunning images of deep space.</p>
+            <a class="vid-btn" href="../pages/video.html">watch a video</a>
+        </div>
+
+        <div class="mission">
+            <h2>Mars Pathfinder (1997)</h2>
+            <p>Delivered the Sojourner rover to Mars, proving that rovers could navigate on the Martian surface.</p>
+            <a class="vid-btn" href="../pages/video.html">watch a video</a>
+        </div>
+
+        <div class="mission">
+            <h2>Curiosity Rover (2012)</h2>
+            <p>Exploring Mars' Gale Crater and investigating the planet’s past habitability for microbial life.</p>
+            <a class="vid-btn" href="../pages/video.html">watch a video</a>
+        </div>
+
+        <a class="back-btn" href="../Index.html">Back to Home Page</a>
+        <a class="read-more-btn" href="https://www.nasa.gov/history/explore-nasas-history/">Read More</a>
+    </div>
+    <button>Load Missions</button>
+<div id="missions"></div>
+
+
+</body>
+
+</html>
+
+

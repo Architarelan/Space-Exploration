@@ -1,0 +1,91 @@
+/* Background styling */
+body {
+    background-image: url('background.jpg'); /* Space-themed background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Login form container */
+.login-container {
+    background: rgba(255, 255, 255, 0.2); /* Transparent white */
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /* Glass effect */
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+/* Centered Earth image */
+.center-image {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* Input fields with helmet icons */
+.input-container {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.input-container img {
+    width: 20px;
+    margin: 5px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    color: white;
+}
+
+input::placeholder {
+    color: lightgray;
+}
+
+/* Login button */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Signup link */
+p {
+    margin-top: 10px;
+    color: white;
+}
+
+a {
+    color: rgb(236, 217, 14);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

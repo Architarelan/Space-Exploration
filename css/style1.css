@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* ================= RESET ================= */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    list-style: none;
+    color: #fff;
+}
+
+/* ================= ROOT ================= */
+:root{
+    --color-text: #cdc6c3;
+    --hover-color: #70efbf;
+    --neon-box-shadow: 0 0 .5rem #70efbf;
+    --index: calc(1vw + 1vh);
+}
+
+/* ================= SCROLLBAR ================= */
+::-webkit-scrollbar{
+    width: .5rem;
+}
+::-webkit-scrollbar-track{
+    background: #000;
+}
+::-webkit-scrollbar-thumb{
+    background: var(--hover-color);
+    border-radius: 5rem;
+}
+
+/* ================= BODY ================= */
+body {
+    font-family: "Outfit", sans-serif;
+    background-image: url('../assets/images/background.jpg'); /* ✅ FIXED */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
+header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px 12%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--hover-color);
+}
+
+.logo img{
+    width: 40px;
+    height: auto;
+}
+
+.navlist{
+    display: flex;
+}
+
+.navlist li{
+    margin: 0 1.5rem;
+}
+
+.nav-item{
+    position: relative;
+    padding: 17px 0;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.nav-item:hover{
+    color: var(--hover-color);
+}
+
+.nav-item::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 1px;
+    background: var(--hover-color);
+    transition: .3s;
+}
+
+.nav-item:hover::before{
+    width: 100%;
+}
+
+.nav-item.active{
+    color: var(--hover-color);
+    border-bottom: 1px solid var(--hover-color);
+}
+
+/* ================= BUTTON ================= */
+.marsBtn{
+    background: linear-gradient(180deg , #70efbf 0, #21e69a 100%);
+    height: 28px;
+    line-height: 28px;
+    border-radius: 5px;
+    padding: 0 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #000;
+}
+
+.marsBtn:hover{
+    box-shadow: 0 3px 9px #25b981;
+}
+
+/* ================= SECTIONS ================= */
+section{
+    padding: 100px 12%;
+}
+
+/* ================= HOME ================= */
+.home{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.home-text h1{
+    font-size: calc(var(--index)*2);
+    font-weight: 800;
+    text-shadow: 1px 1px 1px #474747;
+}
+
+span{
+    color: var(--hover-color);
+}
+
+.home-img{
+    position: relative;
+}
+
+.home-img img.hero{
+    width: 400px;
+    animation: floating 4s ease-in-out infinite;
+}
+
+.moon-light{
+    position: absolute;
+    left: 0;
+    width: 90px;
+    mix-blend-mode: screen;
+}
+
+/* ================= EARTH ================= */
+.earth-rotate{
+    width: 100%;
+}
+
+.earth{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+    width: calc(var(--index)*45);
+    animation: rotate 300s infinite linear;
+}
+
+/* ================= DISCOVERY ================= */
+.Discovery .container{
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Discovery-box{
+    width: 200px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background-image: url('../assets/images/cardBg.jpg'); /* ✅ FIXED */
+    background-size: cover;
+    border-radius: 10px;
+    margin: 2rem .5rem;
+}
+
+.Discovery img{
+    width: 120px;
+    margin-top: -4rem;
+    animation: floating 6s ease-in-out infinite;
+}
+
+/* ================= MISSION HISTORY ================= */
+.mission-hi{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.img-mission{
+    width: 600px;
+}
+
+.img-mission img{
+    width: 200px;
+    animation: floating 4s ease-in-out infinite;
+}
+
+.text-mission h3{
+    font-size: 2.5rem;
+    text-shadow: 2px 1px 1px #474747;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes rotate{
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(360deg); }
+}
+
+@keyframes floating{
+    0%,100%{ transform: translateY(0); }
+    50%{ transform: translateY(-14px); }
+}
